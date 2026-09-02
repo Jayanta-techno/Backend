@@ -1,0 +1,19 @@
+{
+  "name": "chai-backend",
+  "version": "1.0.0",
+  "description": "Professional Jpurney to Backend",
+  "keywords": [
+    "Javascript",
+    "Node"
+  ],
+  "license": "ISC",
+  "author": "Jayanta",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

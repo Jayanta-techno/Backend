@@ -15,6 +15,11 @@ app.use(express.urlencoded({limit:'10mb',extended:true})); // to encdode data fr
 app.use(express.static('public')); // to serve static files from public folder like images,fevicons etc
 app.use(cookieParser()); // to parse cookies from request headers
 
+import userRouter from './routes/user.routes.js';
+
+// routes declaration
+app.use("/api/v1/users",userRouter);
+
 
 
 

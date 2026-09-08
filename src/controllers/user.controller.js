@@ -11,6 +11,7 @@ const registerUser=asyncHandler(async(req,res,next)=>{
     // })
     const {fullname,email,username,password}=req.body ;
     // console.log("Email:",email);
+    console.log("Body:",req.body);
     if([fullname,email,username,password].some((field)=>
         field?.trim()===""
     )){
@@ -21,7 +22,7 @@ const registerUser=asyncHandler(async(req,res,next)=>{
         throw new ApiError(409,"User already exists with this email or username !")
     }
     const avatarLocalpath= req.files?.avatar[0].path ;
-    const coverImageLocalpath= req.files?.avatar[0].path;
+    const coverImageLocalpath= req.files?.coverImage[0].path;
 
     if(!avatarLocalpath){
         throw new ApiError(400,"Avatar is required !")
@@ -39,8 +40,8 @@ const registerUser=asyncHandler(async(req,res,next)=>{
         password,
         username:username.toLowerCase()
     })
-    const createdUser=User.findById(user_db._id).select(
-        "-pasword -refreshToken"
+    const createdUser=await User.findById(user_db._id).select(
+        "-password -refreshToken"
     )
     if(!createdUser){
         throw new ApiError(500,"Something went wrong while registering.")

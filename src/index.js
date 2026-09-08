@@ -5,14 +5,14 @@ import connectDB from "./db/db.js";
 import { app } from "./app.js";
 
 dotenv.config({
-    path: "./env"
+    path: "./.env"
 });
 
 connectDB()
     .then(() => {
         console.log(`Database connected to ${DB_name}`);
 
-        const PORT = process.env.PORT || 8000;
+        const PORT = 8000;
 
         const server = app.listen(PORT, () => {
             console.log("SERVER STARTED");

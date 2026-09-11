@@ -1,0 +1,41 @@
+$kind: http-request
+name: http://localhost:8000/api/v1/users/register
+description: ""
+url: http://localhost:8000/api/v1/users/register
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: fullname
+      value: Jayan
+      description: ""
+      disabled: false
+    - type: text
+      key: email
+      value: bcbxn@gmail.com
+      description: ""
+      disabled: false
+    - type: text
+      key: username
+      value: jayantacodex
+      description: ""
+      disabled: false
+    - type: file
+      key: avatar
+      src:
+        - /C:/Users/jayan/OneDrive/Desktop/all/my docs/my_photo.jpeg
+      description: ""
+      disabled: false
+    - type: file
+      key: coverImage
+      src:
+        - /C:/Users/jayan/OneDrive/Desktop/all/my docs/dada photo.jpeg
+      description: ""
+      disabled: false
+    - type: text
+      key: password
+      value: jayanta123
+      description: ""
+      disabled: false
+order: 1788884476544

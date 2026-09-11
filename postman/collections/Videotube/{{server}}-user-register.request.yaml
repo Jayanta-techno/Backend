@@ -1,0 +1,39 @@
+$kind: http-request
+name: "{{server}}/user/register"
+description: ""
+url: "{{server}}/user/register"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: fullname
+      value: ""
+      description: ""
+      disabled: false
+    - type: text
+      key: password
+      value: ""
+      description: ""
+      disabled: false
+    - type: text
+      key: username
+      value: ""
+      description: ""
+      disabled: false
+    - type: text
+      key: email
+      value: ""
+      description: ""
+      disabled: false
+    - type: file
+      key: avatar
+      src: []
+      description: ""
+      disabled: false
+    - type: file
+      key: coverImage
+      src: []
+      description: ""
+      disabled: false
+order: 3629490510754065

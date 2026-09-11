@@ -13,11 +13,12 @@ const generateAccessAndRefreshTokens = async (userId) => {
         const accesstoken = user.generateAccessToken();
         const refreshtoken = user.generateRefreshToken();
         user.refreshToken = refreshtoken;
-        await user.save({ validateBeforeSave: tfalse });
+        await user.save({ validateBeforeSave: false });
         //when saving the refresh token, we use false so other validation doesn't interfere
         return { accesstoken, refreshtoken };
-    } catch (error) {
-        throw new ApiError(500, "something went wrong while token generation.")
+    }catch (error) {
+    console.error("TOKEN GENERATION ERROR:", error);
+    throw new ApiError(500, "Something went wrong while token generation.");
     }
 }
 
@@ -95,7 +96,7 @@ const loginUser = asyncHandler(async (req, res) => {
     }
     return res.status(200)
     .cookie("accessToken",accesstoken,options)
-    .cookie("refreshToken",refreshToken,options)
+    .cookie("refreshToken",refreshtoken,options)
     .json(
         new ApiResponse(
             200,

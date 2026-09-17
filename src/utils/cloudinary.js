@@ -25,3 +25,14 @@ export const uploadOnCloudinary=async (localPath)=>{
         return null;
     }
 }
+
+// export const deleteFromCloudinary=async(publicId)=>{
+//     try{
+//         if(!publicId) return ;
+//         const response =await cloudinary.uploader.destroy(publicId);
+//         console.log("Old avatar deleted:",response);
+//         return response;
+//     }catch(error){
+//         console.log("Error deleteing old avatar: ",error);
+//     }
+// }
